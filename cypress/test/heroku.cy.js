@@ -4,6 +4,6 @@ describe('Heroku', () => {
         cy.get('#username').type('tomsmith')
         cy.get('#password').type('SuperSecretPassword!')
         cy.xpath("//button[@type='submit']").click()
-        
+        cy.xpath("/html/body/div[2]/div/div/a/i").click()
     });
 });
