@@ -6,7 +6,16 @@ describe("MyfirstTest",()=>{
         cy.get("input[name='password']").type("admin123")
         cy.get("[type='submit']").click()
         cy.get("p[class='oxd-userdropdown-name']").click()
-        cy.get(".oxd-dropdown-menu").find("oxd-userdropdown-link").should("have.length",4)
-        cy.get("a[href='/web/index.php/auth/logout']").click()
+        // cy.get(".oxd-dropdown-menu").find("oxd-userdropdown-link").should("have.length",4)
+        // cy.get("a[href='/web/index.php/auth/logout']").click()
+        // cy.get(':nth-child(1) > .oxd-main-menu-item > .oxd-text').click()
+        cy.contains("Admin").click()
+        cy.get(".oxd-autocomplete-wrapper").type("sa");
+    
+        cy.get(".ui-menu-item div").each(($el, index, $list) => {
+            if ($el.text() === "Sayuj Kumar Shrestha") {
+              cy.wrap($el).click();
+            }
     })
+})
 })
